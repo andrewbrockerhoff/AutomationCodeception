@@ -1,0 +1,33 @@
+actor: Tester
+paths:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    helpers: tests/helpers
+    support: tests/_support
+    envs: tests/_envscode
+    reports: tests/_output
+settings:
+    bootstrap: _bootstrap.php
+    suite_class: \PHPUnit_Framework_TestSuite
+    colors: true
+    memory_limit: 1024M
+    strict_xml: true
+
+
+extensions:
+
+   enabled:
+        - Codeception\Extension\RunFailed
+        - Codeception\Extension\Recorder
+   config:
+        Codeception\Extension\Recorder:
+          delete_successful: false
+
+modules:
+    config:
+        Db:
+            dsn: ''
+            user: ''
+            password: ''
+            dump: tests/_data/dump.sql

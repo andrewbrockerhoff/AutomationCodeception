@@ -1,0 +1,68 @@
+class_name: AcceptanceTester
+
+modules:
+  enabled:
+    - Helper\Acceptance
+    - Helper\CaptchaSolver
+    - Helper\CustomWebDriver
+    - Asserts
+
+  config:
+    Helper\CustomWebDriver:
+      browser: chrome
+      url: 'https://www.famous-smoke.com'
+      user-agent: 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:16.0) Gecko/20121026 Firefox/16.0; captcha_bypass_fam0us'
+
+env:
+  prod:
+      modules:
+        config:
+           Helper\CustomWebDriver:
+              url: 'https://www.famous-smoke.com'
+  test:
+      modules:
+        config:
+           Helper\CustomWebDriver:
+              url: 'https://testing.famous-smoke.com'
+
+  dev:
+      modules:
+        config:
+           Helper\CustomWebDriver:
+              url: 'https://release.famous-smoke.com'
+  browserstack-win10-chrome:
+        modules:
+          config:
+             Helper\CustomWebDriver:
+                host: 'andrew1133:n4UsPjUQWoB7fsExknx8@hub.browserstack.com'
+                port: 80
+                browser: chrome
+                capabilities:
+                 unexpectedAlertBehaviour: 'accept'
+                 browserstack.user: 'andrew1133'
+                 browserstack.key: 'n4UsPjUQWoB7fsExknx8'
+                 browserstack.console: 'verbose'
+                 browserstack.idleTimeout: '300'
+                 acceptSslCerts: true
+                 os: Windows
+                 os_version: 10
+                 browserstack.local: true
+                 browserstack.debug: true
+  browserstack-win10-firefox:
+        modules:
+          config:
+             Helper\CustomWebDriver:
+                host: 'andrew1133:n4UsPjUQWoB7fsExknx8@hub.browserstack.com'
+                port: 80
+                browser: firefox
+                capabilities:
+                 unexpectedAlertBehaviour: 'accept'
+                 browserstack.user: 'andrew1133'
+                 browserstack.key: 'n4UsPjUQWoB7fsExknx8'
+                 browserstack.console: 'verbose'
+                 browserstack.idleTimeout: '300'
+                 acceptSslCerts: true
+                 os: Windows
+                 os_version: 10
+                 browserstack.local: true
+                 browserstack.debug: true

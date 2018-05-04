@@ -1,0 +1,8 @@
+{
+  "require": {
+    "fzaninotto/faker": "^1.6",
+    "codeception/codeception": "*",
+    "browserstack/browserstack-local": "^1.1",
+    "antonvolkov/php-simple-rest-client": "^0.7.0"
+  }
+}

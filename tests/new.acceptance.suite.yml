@@ -1,0 +1,73 @@
+class_name: AcceptanceTester
+
+modules:
+  enabled:
+    - Helper\Acceptance
+    - Helper\CaptchaSolver
+#    - WebDriver
+    - Helper\CustomWebDriver
+    - Asserts
+
+  config:
+    Helper\CustomWebDriver:
+      url: 'https://www.famous-smoke.com'
+      browser: chrome
+
+env:
+  prod:
+      modules:
+        config:
+           Helper\CustomWebDriver:
+              url: 'https://www.famous-smoke.com'
+#              url: "http://www.whoishostingthis.com/tools/user-agent/"
+              user-agent: 'captcha_bypass_fam0us'
+  test:
+      modules:
+        config:
+           WebDriver:
+              url: 'https://testing.famous-smoke.com'
+  dev:
+      modules:
+        config:
+           WebDriver:
+              url: 'https://release.famous-smoke.com'
+  browserstack-win10-chrome:
+        modules:
+          config:
+             WebDriver:
+                host: 'andrew1133:n4UsPjUQWoB7fsExknx8@hub.browserstack.com'
+                port: 80
+                browser: chrome
+                timeout: 500
+                capabilities:
+                 os: Windows
+                 os_version: 7
+                 browserstack.local: true
+                 browserstack.debug: true
+                 browserstack.idleTimeout: '300'
+  browserstack-sierra-safari:
+      modules:
+        config:
+           WebDriver:
+              host: 'andrew1133:n4UsPjUQWoB7fsExknx8@hub.browserstack.com'
+              port: 80
+              browser: Safari
+              capabilities:
+               os: OS X
+               os_version: Sierra
+               browserstack.local: true
+               browserstack.debug: true
+               browserstack.idleTimeout: '300'
+  browserstack-win10-edge:
+        modules:
+          config:
+             WebDriver:
+                host: 'andrew1133:n4UsPjUQWoB7fsExknx8@hub.browserstack.com'
+                port: 80
+                browser: Edge
+                capabilities:
+                 os: Windows
+                 os_version: 10
+                 browserstack.local: true
+                 browserstack.debug: true
+                 browserstack.idleTimeout: '300'

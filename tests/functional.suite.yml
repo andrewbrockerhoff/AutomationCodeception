@@ -1,0 +1,13 @@
+class_name: FunctionalTester
+modules:
+    enabled:
+        - Asserts
+        - PhpBrowser
+        - REST:
+            depends: PhpBrowser
+    config:
+        PhpBrowser:
+            url: https://api.mailgun.net/v3/sandboxd1a1e544ab0c4476ac3539a51444998b.mailgun.org
+            curl: 
+                CURLOPT_SSL_VERIFYPEER: false
+
