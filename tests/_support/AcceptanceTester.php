@@ -100,7 +100,7 @@ class AcceptanceTester extends \Codeception\Actor
     }
 
     /**
-     * Method is using to fix practitest extra failings
+     * Method is using to fix practitest extra failings.
      *
      * @param $element
      * @param null $timeout

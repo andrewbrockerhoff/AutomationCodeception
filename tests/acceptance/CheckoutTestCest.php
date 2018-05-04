@@ -36,7 +36,7 @@ class CheckoutTestCest
     }
 
     /**
-     * Run after every scenario
+     * Run after every scenario.
      */
     public function _after(AcceptanceTester $I)
     {
